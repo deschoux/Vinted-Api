@@ -9,16 +9,17 @@ const payRoute = require("./routes/payment");
 
 const app = express();
 
-const corsOptions = {
-  origin: [
-    "https://react-vinted-frontend.netlify.app/",
-    "http://localhost:5173",
-  ],
-  credentials: true,
-};
-
+// const corsOptions = {
+//   origin: [
+//     "https://react-vinted-frontend.netlify.app/",
+//     "http://localhost:5173",
+//   ],
+//   credentials: true,
+// };
+app.use(cors());
 app.use(helmet());
-app.use(cors(corsOptions));
+
+// app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get("/", (req, res) => {
